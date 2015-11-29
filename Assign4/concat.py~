@@ -1,0 +1,17 @@
+import os
+
+name = str(raw_input("concat.txt"))
+
+fp = open(name,"w")
+for fileName in os.listdir(os.getcwd()):
+    if(".txt" in fileName):
+        f = open(fileName, "r")
+        matter = f.read()
+        f.close()
+        matter = matter.replace("\n"," ")
+        fp.write(matter.strip())
+
+
+fp.write("\n")
+
+fp.close()
